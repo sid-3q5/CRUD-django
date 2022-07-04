@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"  
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- FOR HOVER :- # A6B1E1 -->
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #F4EEFF;
+        }
+
+        .nav{
+            background-color: #424874;
+            padding: 10px 0 10px 60px;
+            margin: 0 0 50px 0;
+            color: #DCD6F7;
+        }
+
+        .list{
+            display: flex;
+            justify-content: center;
+        }
+
+        .list li{
+            padding: 0 0 0 40px;
+            margin: 40px 0 50px 0;
+        }
+
+        .list ul li{
+            display: inline-block;
+        }
+
+        .list button{
+            background-color: #F4EEFF;
+            color: #424874;
+            font-size: 17px;
+            padding: 12px 25px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .list a:hover{
+            background-color: #424874;
+            cursor: pointer;
+        }
+
+        a:hover, button:hover{
+            cursor: pointer;
+        }
+
+        </style>
+</head>
+<body>
+    <div class="nav">
+        <h1> Student Information</h1>  
+    </div>
+
+    <div class="main">
+ 
+        <!-- {% for data in dataset %}
+     
+        {{ data.student_id }}<br/>
+        {{ data.first_name }}{{ data.last_name }}<br/>
+        <hr/>
+     
+        {% endfor %} -->
+     
+        <table>
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Country</th>
+                <th>Martial Status</th>
+                <th>Program</th>
+                <th colspan="2">ACTION</th>
+            </tr>
+            {% for data in dataset %}
+                <tr>
+                    <td>{{ data.student_id }}</td>
+                    <td>{{ data.first_name }} {{ data.last_name }}</td>
+                    <td>{{ data.address }}</td>
+                    <td>{{ data.country }}</td>
+                    <td>{{ data.status2}}</td>
+                    <td>{{ data.program }}</td>
+                    <td>
+                        <a  href="{% url 'update' data.id %}">
+                            <button class="button">Update</button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{% url 'delete' data.id  %}">
+                            <button class="button">Delete</button>
+                        </a>
+                    </td>
+                </tr>
+                {% empty %}
+                    <li>List is Empty. Try Adding to the List</li>
+            {% endfor %}
+            <tr>
+                <td>{{p7}}</td>
+                <td>{{p1}} {{p2}}</td>
+                <td>{{p4}}</td>
+                <td>{{p3 }}</td>
+                <td>{{p5}}</td>
+                <td>{{p6}}</td>
+                <td colspan="2"><i class="fa fa-ban"></i>Super User cannot change</td>
+            </tr>
+        </table>
+        
+    </div>
+
+    <div class="list">
+        <ul>
+            <li>
+                <a href="create">
+                    <button class="button"><i class="fa fa-plus"></i></button>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

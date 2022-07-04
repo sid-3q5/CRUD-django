@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <!-- <table> -->
+            <!-- Student ID : <input type="text" value="{{emp.student_id}}" placeholder="Student ID">
+            <br>Student First Name :  <input type="text" value="{{emp.first_name}}" placeholder="First Name">
+            <br>Student Last Name :  <input type="text" value="{{emp.last_name}}" placeholder="Last Name">
+            <br>Address : <input type="text" value="{{emp.address}}" placeholder="Address">
+            <br>Martial Status :  <input type="text" value="{{emp.status2}}" placeholder="Martial Status">
+            <br>Country :  <input type="text" value="{{emp.country}}" placeholder="Country">
+            <br>Program :  <input type="text" value="{{emp.program}}" placeholder="Program">
+            <br>Date created :  <input type="text" value="{{emp.date}}" disabled> -->
+            <!-- <tr>
+                <td>Student ID :</td>
+                <td><input type="text" value="{{emp.student_id}}" placeholder="Student ID"></td>
+            </tr>
+            <tr>
+                <td>Student First Name :</td>
+                <td><input type="text" value="{{emp.first_name}}" placeholder="First Name"></td>
+            </tr>
+            <tr>
+                <td>Student Last Name :</td>
+                <td><input type="text" value="{{emp.last_name}}" placeholder="Last Name"></td>
+            </tr>
+            <tr>
+                <td>Address :</td>
+                <td><input type="text" value="{{emp.address}}" placeholder="Address"></td>
+            </tr>
+            <tr>
+                <td>Martial Status :</td>
+                <td><input type="text" value="{{emp.status2}}" placeholder="Martial Status"></td>
+            </tr>
+            <tr>
+                <td>Country :</td>
+                <td><input type="text" value="{{emp.country}}" placeholder="Country"></td>
+            </tr>
+            <tr>
+                <td>Program :</td>
+                <td><input type="text" value="{{emp.program}}" placeholder="Program"></td>
+            </tr>
+            <tr>
+                <td>Date created :</td>
+                <td><input type="text" value="{{emp.date}}" disabled></td>
+            </tr>
+        </table>
+        <input type="submit" value="Save">
+    </form> -->
+    {% csrf_token %}
+ 
+        <!-- form as paragraph -->
+        {{ form.as_p }}
+ 
+        <input type="submit" value="Update">
+    </form>
+    
+</body>
+</html>
